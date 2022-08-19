@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:directive.include file="header.jsp"></jsp:directive.include>
-<jsp:directive.include file="sidebar.jsp"></jsp:directive.include>
+<jsp:directive.include file="/admin/header.jsp"></jsp:directive.include>
+<jsp:directive.include file="/admin/sidebar.jsp"></jsp:directive.include>
     <div class="content-wrapper">
         <section class="content-header">
             <div class="container-fluid">
@@ -17,4 +17,4 @@
             </div>
         </section>
     </div>
-<jsp:directive.include file="footer.jsp"></jsp:directive.include>
+<jsp:directive.include file="/admin/footer.jsp"></jsp:directive.include>
