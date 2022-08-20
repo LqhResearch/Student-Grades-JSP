@@ -42,10 +42,11 @@
     <sql:query dataSource = "${db}" var = "find">select * from bang_diem where MaLop = '<%=maLop%>' and MaHP = '<%=maHP%>' LIMIT 1</sql:query>
 
         <section class="content">
-            <div class="container-fluid">
-                <div class="card">
-                    <div class="card-body">
-                        <form class="row">
+        <% if (request.getSession().getAttribute("role").equals(1)) { %>
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <form class="row">
                         <sql:query dataSource = "${db}" var = "list">select * from lop;</sql:query>
                             <div class="form-group col-md-5">
                                 <label>Lớp</label>
@@ -72,8 +73,7 @@
                 </div>
             </div>
         </div>
-
-        <%
+        <% }
             if (maLop != null & maHP != null) {
         %>
         <sql:query dataSource = "${db}" var = "list">select MaBD, phan_cong.MaLop, phan_cong.MaHP, sinh_vien.*, ifnull(DiemQT, 0) as DiemQT, ifnull(DiemThi, 0) as DiemThi from phan_cong join sinh_vien on phan_cong.MaLop = sinh_vien.MaLop left join bang_diem on bang_diem.MaSV = sinh_vien.MaSV and bang_diem.MaHP = phan_cong.MaHP where phan_cong.MaLop = '<%=maLop%>' and phan_cong.MaHP = '<%=maHP%>'</sql:query>
@@ -106,7 +106,7 @@
                                 <td><input name="DiemQT" class="form-control form-control-sm text-center" type="text" value="${row.DiemQT}" style="width: 80px;" /></td>
                                 <td><input name="DiemThi" class="form-control form-control-sm text-center" type="text" value="${row.DiemThi}" style="width: 80px;" /></td>
                                 <td><input class="form-control form-control-sm text-center" type="text" value="${(row.DiemQT + row.DiemThi) / 2}" style="width: 80px;" readonly /></td>
-                                <td><input class="form-control form-control-sm text-center" type="text" value="B+" style="width: 80px;" readonly /></td>
+                                <td><input class="form-control form-control-sm text-center" type="text" value="${Helper.Point4((row.DiemQT + row.DiemThi) / 2)}" style="width: 80px;" readonly /></td>
                                 <td>
                                     <button name="action" value="save" class="btn btn-sm btn-primary"><i class="fas fa-save"></i> Lưu</button>
                                 </td>

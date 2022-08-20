@@ -14,7 +14,9 @@ $(function () {
                 "sNext": ">"
             },
             "sInfo": "Hiển thị _START_ - _END_ trong _TOTAL_ dòng",
-            "sLengthMenu": "Hiển thị _MENU_ dòng"
+            "sLengthMenu": "Hiển thị _MENU_ dòng",
+            "sInfoEmpty": "Hiển thị 0 - 0 trong 0 dòng",
+            "sEmptyTable": "Không tìm thấy dữ liệu trên máy chủ"
         }
     });
 

@@ -1,15 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
-<%@ page import="com.db.ConnectDB" %>
-
-<sql:setDataSource var = "db" driver = "com.mysql.jdbc.Driver"
-                   url = "jdbc:mysql://localhost/ms-grades"
-                   user = "root"  password = ""/>
-
-<%
-    request.setCharacterEncoding("UTF-8");
-%>
+<jsp:directive.include file="/dbconnect.jsp"></jsp:directive.include>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +43,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                            <i class="fas fa-th-large"></i>
+                        <a class="nav-link" href="/" role="button">
+                            <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </li>
                 </ul>

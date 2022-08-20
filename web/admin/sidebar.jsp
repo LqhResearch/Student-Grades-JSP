@@ -10,7 +10,7 @@
                 <img src="/assets/img/admin.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Quốc Hưng</a>
+                <a href="#" class="d-block"><%=request.getSession().getAttribute("fullname")%></a>
             </div>
         </div>
 
@@ -27,6 +27,7 @@
 
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <% if (request.getSession().getAttribute("role").equals(1)) { %>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -95,6 +96,21 @@
                         <p>Quản lý Bảng điểm</p>
                     </a>
                 </li>
+                <% } else if (request.getSession().getAttribute("role").equals(2)) { %>
+                <li class="nav-item">
+                    <a href="/teacher/assignment/index.jsp" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>Phân công của tôi</p>
+                    </a>
+                </li>
+                <% } else if (request.getSession().getAttribute("role").equals(3)) { %>
+                <li class="nav-item">
+                    <a href="/student/point/index.jsp" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>Bảng điểm của tôi</p>
+                    </a>
+                </li>
+                <% }%>
             </ul>
         </nav>
     </div>

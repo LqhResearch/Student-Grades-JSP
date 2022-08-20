@@ -1,6 +1,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:directive.include file="/admin/header.jsp"></jsp:directive.include>
 <jsp:directive.include file="/admin/sidebar.jsp"></jsp:directive.include>
+
+<sql:setDataSource var = "db" driver = "com.mysql.jdbc.Driver"
+                   url = "jdbc:mysql://localhost/ms-grades"
+                   user = "root"  password = ""/>
+
+<% request.setCharacterEncoding("UTF-8");%>
+
 <%
     String sql = "";
     if (request.getParameter("action") != null) {
