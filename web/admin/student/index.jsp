@@ -1,21 +1,38 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:directive.include file="/admin/header.jsp"></jsp:directive.include>
 <jsp:directive.include file="/admin/sidebar.jsp"></jsp:directive.include>
-    <div class="content-wrapper">
-        <section class="content-header">
-            <div class="container-fluid">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/admin/"><i class="fas fa-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="/admin/student/index.jsp">Sinh viên</a></li>
-                    <li class="breadcrumb-item active">Danh sách chi tiết</li>
-                </ol>
-            </div>
-        </section>
+<%
+    String sql = "";
+    if (request.getParameter("del-id") != null) {
+        String id = request.getParameter("del-id");
+        sql = "delete from sinh_vien where MaSV = " + id;
+    }
+%>
 
-        <section class="content">
-            <div class="container-fluid">
-                <a href="/admin/student/add.jsp" class="btn btn-success"><i class="fas fa-plus"></i> Thêm mới</a>
-            </div>
+<% if (!sql.isEmpty()) {%>
+<sql:update dataSource = "${db}" var = "res"><%=sql%></sql:update>
+<%
+        response.sendRedirect("index.jsp");
+    }
+%>
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin/"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="/admin/student/index.jsp">Sinh viên</a></li>
+                <li class="breadcrumb-item active">Danh sách chi tiết</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <a href="/admin/student/add.jsp" class="btn btn-success"><i class="fas fa-plus"></i> Thêm mới</a>
+        </div>
+
+        <sql:query dataSource = "${db}" var = "list">select * from sinh_vien, lop where sinh_vien.MaLop = lop.MaLop;</sql:query>
 
             <div class="container-fluid my-3">
                 <div class="card">
@@ -34,64 +51,27 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach var = "row" items = "${list.rows}">
                                 <tr>
-                                    <td>110119035</td>
-                                    <td>Tô Trọng Nhân</td>
-                                    <td>08/05/2001</td>
-                                    <td>Nam</td>
-                                    <td>0123456789</td>
-                                    <td>nhan@gmail.com</td>
-                                    <td>DA19TTA</td>
+                                    <td>${row.MaSV}</td>
+                                    <td>${row.HoTen}</td>
+                                    <td>${row.NgaySinh}</td>
+                                    <td>${row.GioiTinh}</td>
+                                    <td>${row.Sdt}</td>
+                                    <td>${row.Email}</td>
+                                    <td>${row.MaLop}</td>
                                     <td>
-                                        <a href="/admin/student/edit.jsp?id=1" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>
-                                        <div onclick="RemoveRow(1)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
+                                        <a href="/admin/student/edit.jsp?id=${row.MaSV}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>
+                                        <div onclick="RemoveRow('${row.MaSV}')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>110119035</td>
-                                    <td>Tô Trọng Nhân</td>
-                                    <td>08/05/2001</td>
-                                    <td>Nam</td>
-                                    <td>0123456789</td>
-                                    <td>nhan@gmail.com</td>
-                                    <td>DA19TTA</td>
-                                    <td>
-                                        <a href="/admin/student/edit.jsp?id=1" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>
-                                        <div onclick="RemoveRow(1)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>110119035</td>
-                                    <td>Tô Trọng Nhân</td>
-                                    <td>08/05/2001</td>
-                                    <td>Nam</td>
-                                    <td>0123456789</td>
-                                    <td>nhan@gmail.com</td>
-                                    <td>DA19TTA</td>
-                                    <td>
-                                        <a href="/admin/student/edit.jsp?id=1" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>
-                                        <div onclick="RemoveRow(1)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>110119035</td>
-                                    <td>Tô Trọng Nhân</td>
-                                    <td>08/05/2001</td>
-                                    <td>Nam</td>
-                                    <td>0123456789</td>
-                                    <td>nhan@gmail.com</td>
-                                    <td>DA19TTA</td>
-                                    <td>
-                                        <a href="/admin/student/edit.jsp?id=1" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>
-                                        <div onclick="RemoveRow(1)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            </c:forEach>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
 <jsp:directive.include file="/admin/footer.jsp"></jsp:directive.include>
 <script src="/assets/js/main.js"></script>
