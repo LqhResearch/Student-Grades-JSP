@@ -103,6 +103,12 @@
                         <p>Phân công của tôi</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/teacher/info/index.jsp" class="nav-link">
+                        <i class="nav-icon fas fa-info"></i>
+                        <p>Thông tin cá nhân</p>
+                    </a>
+                </li>
                 <% } else if (request.getSession().getAttribute("role").equals(3)) { %>
                 <li class="nav-item">
                     <a href="/student/point/index.jsp" class="nav-link">
@@ -110,7 +116,19 @@
                         <p>Bảng điểm của tôi</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/student/info/index.jsp" class="nav-link">
+                        <i class="nav-icon fas fa-info"></i>
+                        <p>Thông tin cá nhân</p>
+                    </a>
+                </li>
                 <% }%>
+                <li class="nav-item">
+                    <a href="/admin/account/index.jsp" class="nav-link">
+                        <i class="nav-icon fas fa-key"></i>
+                        <p>Đổi mật khẩu</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

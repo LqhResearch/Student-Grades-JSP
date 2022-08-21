@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2022 at 09:39 AM
+-- Generation Time: Aug 21, 2022 at 03:35 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -152,8 +152,10 @@ CREATE TABLE `giang_vien` (
 --
 
 INSERT INTO `giang_vien` (`MaGV`, `HoTen`, `GioiTinh`, `NgaySinh`, `Sdt`, `DiaChi`, `Email`, `SoCCCD`, `GhiChu`, `MaNganhDT`) VALUES
-('GV001', 'Nguyễn Bá Nhiệm', 'Nam', '2022-08-11', '0983303609', 'Trà Vinh', 'nhiemnb@tvu.edu.vn', '084123456789', '', 1),
-('GV002', 'Dương Ngọc Vân Khanh', 'Nam', '2022-08-11', '123457899', 'Trà Vinh', 'vankhanh@tvu.edu.vn', '087987654321', '', 1);
+('GV001', 'Nguyễn Bá Nhiệm', 'Nam', '1970-08-11', '0983303609', 'Trà Vinh', 'nhiemnb@tvu.edu.vn', '084123456789', '', 2),
+('GV002', 'Dương Ngọc Vân Khanh', 'Nam', '1970-08-11', '0123457899', 'Trà Vinh', 'vankhanh@tvu.edu.vn', '087987654321', '', 1),
+('GV003', 'Khấu Văn Nhựt', 'Nam', '1970-08-11', '0123456789', 'Trà Vinh', 'nhutkhau@tvu.edu.vn', '087987654321', '', 2),
+('GV004', 'Phạm Thị Trúc Mai', 'Nữ', '1970-08-11', '0123456789', 'Trà Vinh', 'pttmai@tvu.edu.vn', '087987654321', '', 1);
 
 -- --------------------------------------------------------
 
@@ -221,8 +223,7 @@ INSERT INTO `lop` (`MaLop`, `TenLop`, `MaNganhDT`) VALUES
 ('DA19TTA', 'Đại học Công nghệ thông tin A 2019', 1),
 ('DA19TTB', 'Đại học Công nghệ thông tin B 2019', 1),
 ('DA20TTA', 'Đại học Công nghệ thông tin A 2020', 1),
-('DA20TTB', 'Đại học Công nghệ thông tin B 2020', 1),
-('DA20TTC', 'Đại học Công nghệ thông tin C 2020', 1);
+('DA20TTB', 'Đại học Công nghệ thông tin B 2020', 1);
 
 -- --------------------------------------------------------
 
@@ -285,9 +286,12 @@ CREATE TABLE `sinh_vien` (
 --
 
 INSERT INTO `sinh_vien` (`MaSV`, `HoTen`, `GioiTinh`, `NgaySinh`, `DiaChi`, `Sdt`, `Email`, `MaDT`, `SoCCCD`, `TonGiao`, `GhiChu`, `MaLop`) VALUES
+('110119004', 'Kiên Thanh Bình', 'Nam', '2001-01-01', 'Trà Vinh', '0123456789', '110119004@st.tvu.edu.vn', 1, '084123456789', 'Không', '', 'DA19TTA'),
 ('110119006', 'Trần Quốc Đảm', 'Nam', '2001-01-01', 'Trà Vinh', '0123456789', '110119006@st.tvu.edu.vn', 1, '084123456789', 'Không', '', 'DA19TTA'),
 ('110119014', 'Lý Quốc Hưng', 'Nam', '2001-01-01', 'Trà Vinh', '0123456789', '110119014@st.tvu.edu.vn', 1, '084123456789', 'Không', '', 'DA19TTA'),
-('110119060', 'Lý Kim Lam', 'Nam', '2001-01-01', 'Trà Vinh', '0123456789', '110119060@st.tvu.edu.vn', 1, '084123456789', 'Không', '', 'DA19TTA');
+('110119052', 'Võ Duy Thông', 'Nam', '2001-01-01', 'Trà Vinh', '0123456789', '110119052@st.tvu.edu.vn', 1, '084123456789', 'Không', '', 'DA19TTA'),
+('110119063', 'Đỗ Thành Ý', 'Nam', '2001-01-01', 'Trà Vinh', '0123456789', '110119063@st.tvu.edu.vn', 1, '084123456789', 'Không', '', 'DA19TTA'),
+('110119080', 'Lý Kim Lam', 'Nam', '2001-01-01', 'Trà Vinh', '0123456789', '110119080@st.tvu.edu.vn', 1, '084123456789', 'Không', '', 'DA19TTA');
 
 -- --------------------------------------------------------
 
@@ -307,9 +311,9 @@ CREATE TABLE `tai_khoan` (
 --
 
 INSERT INTO `tai_khoan` (`TenDangNhap`, `MatKhau`, `HoTen`, `MaLoaiTK`) VALUES
-('110119060', '202cb962ac59075b964b07152d234b70', 'Lý Kim Lam', 3),
+('110119080', '202cb962ac59075b964b07152d234b70', 'Lý Kim Lam', 3),
 ('admin', '202cb962ac59075b964b07152d234b70', 'LQH', 1),
-('GV001', '202cb962ac59075b964b07152d234b70', 'Nguyễn Bá Nhiệm', 2);
+('GV001', '250cf8b51c773f3f8dc8b4be867a9a02', 'Nguyễn Bá Nhiệm', 2);
 
 --
 -- Indexes for dumped tables
@@ -402,7 +406,7 @@ ALTER TABLE `tai_khoan`
 -- AUTO_INCREMENT for table `bang_diem`
 --
 ALTER TABLE `bang_diem`
-  MODIFY `MaBD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `MaBD` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `bo_mon`
@@ -426,13 +430,13 @@ ALTER TABLE `loai_tk`
 -- AUTO_INCREMENT for table `nganh_dt`
 --
 ALTER TABLE `nganh_dt`
-  MODIFY `MaNganhDT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MaNganhDT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `phan_cong`
 --
 ALTER TABLE `phan_cong`
-  MODIFY `PhanCongID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `PhanCongID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
