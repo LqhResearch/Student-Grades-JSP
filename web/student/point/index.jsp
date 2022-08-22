@@ -14,9 +14,13 @@
 
     <sql:query dataSource = "${db}" var = "list">select * from bang_diem, hoc_phan where bang_diem.MaHP = hoc_phan.MaHP and MaSV = '<%=request.getSession().getAttribute("username")%>'</sql:query>
 
+        <div class="container-fluid my-3">
+            <div id="table_dt_wrapper"></div>
+        </div>
+
         <section class="content">
             <div class="container-fluid">
-                <table id="table_dt" class="table table-bordered table-striped">
+                <table id="table_dt_print" class="table table-bordered table-striped">
                     <thead>
                         <tr class="bg-info">
                             <th>Mã học phần</th>

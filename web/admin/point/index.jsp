@@ -77,7 +77,6 @@
             if (maLop != null & maHP != null) {
         %>
         <sql:query dataSource = "${db}" var = "list">select MaBD, phan_cong.MaLop, phan_cong.MaHP, sinh_vien.*, ifnull(DiemQT, 0) as DiemQT, ifnull(DiemThi, 0) as DiemThi from phan_cong join sinh_vien on phan_cong.MaLop = sinh_vien.MaLop left join bang_diem on bang_diem.MaSV = sinh_vien.MaSV and bang_diem.MaHP = phan_cong.MaHP where phan_cong.MaLop = '<%=maLop%>' and phan_cong.MaHP = '<%=maHP%>'</sql:query>
-
             <div class="container-fluid my-3">
                 <div class="card">
                     <div class="card-body">

@@ -20,6 +20,31 @@ $(function () {
         }
     });
 
+    $("#table_dt_print").DataTable({
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": false,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+        "buttons": [
+            {extend: 'print', text: 'In pdf'},
+            {extend: 'excel', text: 'In excel'}
+        ],
+        "oLanguage": {
+            "sSearch": "Tìm kiếm",
+            "oPaginate": {
+                "sPrevious": "<",
+                "sNext": ">"
+            },
+            "sInfo": "Hiển thị _START_ - _END_ trong _TOTAL_ dòng",
+            "sLengthMenu": "Hiển thị _MENU_ dòng",
+            "sInfoEmpty": "Hiển thị 0 - 0 trong 0 dòng",
+            "sEmptyTable": "Không tìm thấy dữ liệu trên máy chủ"
+        }
+    }).buttons().container().appendTo('#table_dt_wrapper');
+
     $('.select2').select2({
         theme: 'bootstrap4'
     });

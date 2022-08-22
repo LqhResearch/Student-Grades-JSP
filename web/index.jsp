@@ -19,11 +19,11 @@
 <%
         Object role = request.getSession().getAttribute("role");
         if (role.equals(1)) {
-            response.sendRedirect("/admin/point/index.jsp");
+            response.sendRedirect("/admin/index.jsp");
         } else if (role.equals(2)) {
-            response.sendRedirect("/teacher/assignment/index.jsp");
+            response.sendRedirect("/teacher/info/index.jsp");
         } else if (role.equals(3)) {
-            response.sendRedirect("/student/point/index.jsp");
+            response.sendRedirect("/student/info/index.jsp");
         }
     }
 %>
