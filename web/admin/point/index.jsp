@@ -101,7 +101,7 @@
                             <form method="POST">
                                 <td>${row.MaSV}</td>
                                 <td>${row.HoTen}</td>
-                                <td>${row.NgaySinh}</td>
+                                <td>${Helper.Date(row.NgaySinh)}</td>
                                 <td>${row.GioiTinh}</td>
                                 <td><input name="DiemQT" class="form-control form-control-sm text-center" type="text" value="${row.DiemQT}" style="width: 80px;" /></td>
                                 <td><input name="DiemThi" class="form-control form-control-sm text-center" type="text" value="${row.DiemThi}" style="width: 80px;" /></td>

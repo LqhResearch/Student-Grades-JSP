@@ -4,10 +4,22 @@
         <img width="100%" src="/assets/img/logo.png" alt="Logo">
     </a>
 
+    <%
+        String avatar = "";
+        Object role = request.getSession().getAttribute("role");
+        if (role.equals(1)) {
+            avatar = "/assets/img/admin.png";
+        } else if (role.equals(2)) {
+            avatar = "/assets/img/teacher.png";
+        } else if (role.equals(3)) {
+            avatar = "/assets/img/student.png";
+        }
+    %>
+
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="/assets/img/admin.png" class="img-circle elevation-2" alt="User Image">
+                <img src="<%=avatar%>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block"><%=request.getSession().getAttribute("fullname")%></a>
@@ -27,7 +39,7 @@
 
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <% if (request.getSession().getAttribute("role").equals(1)) { %>
+                <% if (role.equals(1)) { %>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -96,7 +108,7 @@
                         <p>Quản lý Bảng điểm</p>
                     </a>
                 </li>
-                <% } else if (request.getSession().getAttribute("role").equals(2)) { %>
+                <% } else if (role.equals(2)) { %>
                 <li class="nav-item">
                     <a href="/teacher/assignment/index.jsp" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -109,7 +121,7 @@
                         <p>Thông tin cá nhân</p>
                     </a>
                 </li>
-                <% } else if (request.getSession().getAttribute("role").equals(3)) { %>
+                <% } else if (role.equals(3)) { %>
                 <li class="nav-item">
                     <a href="/student/point/index.jsp" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>

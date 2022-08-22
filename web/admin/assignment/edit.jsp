@@ -10,7 +10,7 @@
         String classID = request.getParameter("class_id");
         String subjectID = request.getParameter("subject_id");
         String teacherID = request.getParameter("teacher_id");
-        sql = "update phan_cong set MaLop = '" + classID + "', MaHP = '" + semesterID + "', MaGV = '" + teacherID + "', NamHoc = '" + year + "', HocKy = " + semesterID + " where PhanCongID = " + id;
+        sql = "update phan_cong set MaLop = '" + classID + "', MaHP = '" + subjectID + "', MaGV = '" + teacherID + "', NamHoc = '" + year + "', HocKy = " + semesterID + " where PhanCongID = " + id;
     }
 %>
 
@@ -44,7 +44,11 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Năm học</label>
-                                <input type="text" class="form-control" value="${res.getRows()[0].NamHoc}" name="year">
+                                <select class="form-control select2" name="year">
+                                <c:forTokens var = "row" items = "2022 - 2023,2021 - 2022,2020 - 2021,2019 - 2020" delims=",">
+                                    <option value="${row}">${row}</option>
+                                </c:forTokens>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Học kỳ</label>
@@ -59,7 +63,7 @@
                                 <label>Lớp</label>
                                 <select class="form-control select2" name="class_id">
                                 <c:forEach var = "row" items = "${list.rows}">
-                                    <option value="${row.MaLop}" ${res.getRows()[0].MaLop == row.MaLop ? "selected" : ""}>${row.TenLop}</option>
+                                    <option value="${row.MaLop}" ${res.getRows()[0].MaLop == row.MaLop ? "selected" : ""}>${row.MaLop}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -82,7 +86,7 @@
                             </select>
                         </div>
                     </div>
-                    <button name="action" value="edit" class="btn btn-success"><i class="fas fa-plus"></i> Thêm mới</button>
+                    <button name="action" value="edit" class="btn btn-primary"><i class="fas fa-save"></i> Lưu</button>
                     <a href="/admin/assignment/index.jsp" class="btn btn-danger"><i class="fas fa-ban"></i> Huỷ</a>
                 </form>
             </div>

@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:directive.include file="/admin/header.jsp"></jsp:directive.include>
 <jsp:directive.include file="/admin/sidebar.jsp"></jsp:directive.include>
+
 <%
     String sql = "";
     String id = request.getParameter("id");

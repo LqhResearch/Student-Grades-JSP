@@ -36,17 +36,17 @@
                                                 <td><b>Giới tính</b></td>
                                                 <td>${res.getRows()[0].GioiTinh}</td>
                                                 <td><b>Ngày sinh</b></td>
-                                                <td>${res.getRows()[0].NgaySinh}</td>
+                                                <td>${Helper.Date(res.getRows()[0].NgaySinh)}</td>
                                             </tr>
                                             <tr>
                                                 <td><b>Số điện thoại</b></td>
-                                                <td>${res.getRows()[0].Sdt}</td>
+                                                <td><a href="tel:${res.getRows()[0].Sdt}">${Helper.Phone(res.getRows()[0].Sdt)}</a></td>
                                                 <td><b>Địa chỉ</b></td>
                                                 <td>${res.getRows()[0].DiaChi}</td>
                                             </tr>
                                             <tr>
                                                 <td><b>Email</b></td>
-                                                <td>${res.getRows()[0].Email}</td>
+                                                <td><a href="mailto:${res.getRows()[0].Email}">${res.getRows()[0].Email}</a></td>
                                                 <td><b>Số CCCD/CMND</b></td>
                                                 <td>${res.getRows()[0].SoCCCD}</td>
                                             </tr>

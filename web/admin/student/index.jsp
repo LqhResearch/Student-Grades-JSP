@@ -55,14 +55,14 @@
                                 <tr>
                                     <td>${row.MaSV}</td>
                                     <td>${row.HoTen}</td>
-                                    <td>${row.NgaySinh}</td>
+                                    <td>${Helper.Date(row.NgaySinh)}</td>
                                     <td>${row.GioiTinh}</td>
-                                    <td>${row.Sdt}</td>
+                                    <td>${Helper.Phone(row.Sdt)}</td>
                                     <td>${row.Email}</td>
                                     <td>${row.MaLop}</td>
                                     <td>
                                         <a href="/admin/student/edit.jsp?id=${row.MaSV}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>
-                                        <div onclick="RemoveRow('${row.MaSV}')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
+                                        <div onclick="RemoveRow(`${row.MaSV}`)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
                                     </td>
                                 </tr>
                             </c:forEach>

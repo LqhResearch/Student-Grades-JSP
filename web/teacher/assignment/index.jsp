@@ -12,8 +12,8 @@
             </div>
         </section>
 
-        <sql:query dataSource = "${db}" var = "list">select * from phan_cong, hoc_phan where phan_cong.MaHP = hoc_phan.MaHP and MaGV = '<%=request.getSession().getAttribute("username")%>'</sql:query>
-        
+    <sql:query dataSource = "${db}" var = "list">select * from phan_cong, hoc_phan where phan_cong.MaHP = hoc_phan.MaHP and MaGV = '<%=request.getSession().getAttribute("username")%>'</sql:query>
+
         <section class="content">
             <div class="container-fluid">
                 <table id="table_dt" class="table table-bordered table-striped">

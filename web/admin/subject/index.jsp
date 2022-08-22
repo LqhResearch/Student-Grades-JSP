@@ -58,7 +58,7 @@
                                     <td>${row.STC}</td>
                                     <td>${row.STCLyThuyet}</td>
                                     <td>${row.STCThucHanh}</td>
-                                    <td>${row.LoaiHP}</td>
+                                    <td>${row.LoaiHP == "BB" ? "<span class='badge badge-primary'>Bắt buộc</span>" : "<span class='badge badge-success'>Tự chọn</span>"}</td>
                                     <td>${row.TenNganhDT}</td>
                                     <td>
                                         <a href="/admin/subject/edit.jsp?id=${row.MaHP}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>

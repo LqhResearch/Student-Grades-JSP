@@ -53,8 +53,8 @@
                                 <tr>
                                     <td>${row.MaGV}</td>
                                     <td>${row.HoTen}</td>
-                                    <td>${row.NgaySinh}</td>
-                                    <td>${row.Sdt}</td>
+                                    <td>${Helper.Date(row.NgaySinh)}</td>
+                                    <td>${Helper.Phone(row.Sdt)}</td>
                                     <td>${row.Email}</td>
                                     <td>
                                         <a href="/admin/teacher/edit.jsp?id=${row.MaGV}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>

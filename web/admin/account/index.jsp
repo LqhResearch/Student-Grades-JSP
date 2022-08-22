@@ -5,17 +5,17 @@
     String sql = "";
     String sql1 = "";
     String username = (String) request.getSession().getAttribute("username");
-    int role = (int) request.getSession().getAttribute("role");
 
     if (request.getParameter("action") != null) {
+        String fullname = request.getParameter("fullname");
         String password = request.getParameter("password");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
         sql = "select count(*) as count from tai_khoan where TenDangNhap = '" + username + "' and MatKhau = md5('" + password + "')";
         if (password1.equals(password2)) {
-            sql1 = "update tai_khoan set MatKhau = md5('" + password1 + "') where TenDangNhap = '" + username + "'";
+            sql1 = "update tai_khoan set HoTen = '" + fullname + "', MatKhau = md5('" + password1 + "') where TenDangNhap = '" + username + "'";
+            response.sendRedirect("/");
         }
-
     }
 %>
 
@@ -49,6 +49,10 @@
                             <input type="text" name="username" class="form-control" value="<%=username%>" readonly>
                         </div>
                         <div class="form-group col-md-6">
+                            <label>Tên hiển thị</label>
+                            <input type="text" name="fullname" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
                             <label>Mật khẩu cũ</label>
                             <input type="password" name="password" class="form-control">
                         </div>
@@ -60,7 +64,7 @@
                             <label>Nhập lại mật khẩu mới</label>
                             <input type="password" name="password2" class="form-control">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <button name="action" value="submit" class="btn btn-primary"><i class="fas fa-save"></i> Lưu</button>
                         </div>
                     </form>

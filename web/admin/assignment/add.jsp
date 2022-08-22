@@ -41,7 +41,11 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Năm học</label>
-                            <input type="text" class="form-control" name="year">
+                            <select class="form-control select2" name="year">
+                                <c:forTokens var = "row" items = "2022 - 2023,2021 - 2022,2020 - 2021,2019 - 2020" delims=",">
+                                    <option value="${row}">${row}</option>
+                                </c:forTokens>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Học kỳ</label>
@@ -56,7 +60,7 @@
                                 <label>Lớp</label>
                                 <select class="form-control select2" name="class_id">
                                 <c:forEach var = "row" items = "${list.rows}">
-                                    <option value="${row.MaLop}">${row.TenLop}</option>
+                                    <option value="${row.MaLop}">${row.MaLop}</option>
                                 </c:forEach>
                             </select>
                         </div>

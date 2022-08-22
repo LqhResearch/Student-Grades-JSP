@@ -17,12 +17,13 @@
 <c:set var = "fullname" scope = "session" value = "${user.getRows()[0].HoTen}"/>
 <c:set var = "role" scope = "session" value = "${user.getRows()[0].MaLoaiTK}"/>
 <%
-        if (request.getSession().getAttribute("role").equals(1)) {
-            response.sendRedirect("/admin/index.jsp");
-        } else if (request.getSession().getAttribute("role").equals(2)) {
-            response.sendRedirect("/teacher/index.jsp");
-        } else if (request.getSession().getAttribute("role").equals(3)) {
-            response.sendRedirect("/student/index.jsp");
+        Object role = request.getSession().getAttribute("role");
+        if (role.equals(1)) {
+            response.sendRedirect("/admin/point/index.jsp");
+        } else if (role.equals(2)) {
+            response.sendRedirect("/teacher/assignment/index.jsp");
+        } else if (role.equals(3)) {
+            response.sendRedirect("/student/point/index.jsp");
         }
     }
 %>
@@ -45,19 +46,19 @@
         <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
         <style>
             body {
-                background: center / cover no-repeat url("/assets/img/logo_bg.png");
+                background: bottom / cover no-repeat url("/assets/img/logo_bg.png");
             }
         </style>
     </head>
     <body class="hold-transition login-page">
         <div class="login-logo">
-            <a class="h1" href="/"><b>Phần mềm quản lý điểm sinh viên khoa Kỹ thuật - Công nghệ</b></a>
+            <h1 class="text-warning"><b>Phần mềm quản lý điểm sinh viên khoa Kỹ thuật - Công nghệ</b></h1>
         </div>
 
         <div class="login-box">
             <div class="card">
                 <div class="card-body login-card-body">
-                    <p class="login-box-msg">Đăng nhập để bắt đầu phiên làm việc mới</p>
+                    <p class="login-box-msg text-primary"><b>Đăng nhập để bắt đầu phiên làm việc</b></p>
 
                     <form method="POST">
                         <div class="input-group mb-3">
