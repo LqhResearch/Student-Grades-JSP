@@ -45,7 +45,7 @@
                                     <th>Lớp</th>
                                     <th>Môn học</th>
                                     <th>Giảng viên</th>
-                                    <th width="118">Công cụ</th>
+                                    <th width="188">Công cụ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,6 +57,7 @@
                                     <td>${row.TenHP}</td>
                                     <td>${row.HoTen}</td>
                                     <td>
+                                        <a href="/admin/assignment/class-list.jsp?id=${row.MaLop}" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> DSSV</a>
                                         <a href="/admin/assignment/edit.jsp?id=${row.PhanCongID}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Sửa</a>
                                         <div onclick="RemoveRow(${row.PhanCongID})" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xoá</div>
                                     </td>
