@@ -27,7 +27,7 @@
     </head>
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
-            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -35,8 +35,12 @@
                     </li>
                 </ul>
 
+                <ul class="navbar-nav">
+                    <li class="nav-item"><b>HỆ THỐNG QUẢN LÝ ĐIỂM SINH VIÊN</b></li>
+                </ul>
+
                 <!-- Right navbar links -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                             <i class="fas fa-expand-arrows-alt"></i>

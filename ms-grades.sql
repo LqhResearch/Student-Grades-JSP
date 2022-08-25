@@ -313,7 +313,7 @@ CREATE TABLE `tai_khoan` (
 INSERT INTO `tai_khoan` (`TenDangNhap`, `MatKhau`, `HoTen`, `MaLoaiTK`) VALUES
 ('110119080', '202cb962ac59075b964b07152d234b70', 'Lý Kim Lam', 3),
 ('admin', '202cb962ac59075b964b07152d234b70', 'LQH', 1),
-('GV001', '250cf8b51c773f3f8dc8b4be867a9a02', 'Nguyễn Bá Nhiệm', 2);
+('GV001', '202cb962ac59075b964b07152d234b70', 'Nguyễn Bá Nhiệm', 2);
 
 --
 -- Indexes for dumped tables

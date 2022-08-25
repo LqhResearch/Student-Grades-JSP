@@ -56,9 +56,9 @@
         </div>
 
         <div class="login-box">
-            <div class="card">
-                <div class="card-body login-card-body">
-                    <p class="login-box-msg text-primary"><b>Đăng nhập để bắt đầu phiên làm việc</b></p>
+            <div class="card bg-transparent">
+                <div class="card-body login-card-body" style="background: rgb(255 255 255 / 0.2)">
+                    <p class="login-box-msg text-warning"><b>Đăng nhập để bắt đầu phiên làm việc</b></p>
 
                     <form method="POST">
                         <div class="input-group mb-3">
@@ -79,7 +79,7 @@
                         </div>
                         <div class="row">
                             <div class="col-7">
-                                <div class="icheck-primary">
+                                <div class="icheck-primary text-white">
                                     <input type="checkbox" id="remember">
                                     <label for="remember">Nhớ đăng nhập</label>
                                 </div>
