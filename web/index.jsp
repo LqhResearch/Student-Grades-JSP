@@ -13,16 +13,18 @@
 
 <% if (!sql.isEmpty()) {%>
 <sql:query dataSource = "${db}" var = "user"><%=sql%></sql:query>
-<c:set var = "username" scope = "session" value = "${user.getRows()[0].TenDangNhap}"/>
-<c:set var = "fullname" scope = "session" value = "${user.getRows()[0].HoTen}"/>
-<c:set var = "role" scope = "session" value = "${user.getRows()[0].MaLoaiTK}"/>
+<c:if test="${user != null}">
+    <c:set var = "username" scope = "session" value = "${user.getRows()[0].TenDangNhap}"/>
+    <c:set var = "fullname" scope = "session" value = "${user.getRows()[0].HoTen}"/>
+    <c:set var = "role" scope = "session" value = "${user.getRows()[0].MaLoaiTK}"/>
+</c:if>
 <%
         Object role = request.getSession().getAttribute("role");
-        if (role.equals(1)) {
+        if (role != null && role.equals(1)) {
             response.sendRedirect("/admin/index.jsp");
-        } else if (role.equals(2)) {
+        } else if (role != null && role.equals(2)) {
             response.sendRedirect("/teacher/info/index.jsp");
-        } else if (role.equals(3)) {
+        } else if (role != null && role.equals(3)) {
             response.sendRedirect("/student/info/index.jsp");
         }
     }

@@ -5,25 +5,46 @@ import java.util.Date;
 
 public class Helper {
 
-    public static String Point4(Object point) {
+    public static Object GPA4(Object point, String type) {
         double value = (double) point;
-        if (value >= 8.5) {
-            return "A";
-        } else if (value >= 8) {
-            return "B+";
-        } else if (value >= 7) {
-            return "B";
-        } else if (value >= 6.5) {
-            return "C+";
-        } else if (value >= 5.5) {
-            return "C";
-        } else if (value >= 5) {
-            return "D+";
-        } else if (value >= 4) {
-            return "D";
-        } else {
-            return "F";
+        if (type.equals("number")) {
+            if (value >= 9) {
+                return "4.0";
+            } else if (value >= 8) {
+                return "3.5";
+            } else if (value >= 7) {
+                return "3.0";
+            } else if (value >= 6.5) {
+                return "2.5";
+            } else if (value >= 5.5) {
+                return "2.0";
+            } else if (value >= 5) {
+                return "1.5";
+            } else if (value >= 4) {
+                return "1.0";
+            } else {
+                return "0.0";
+            }
+        } else if (type.equals("text")) {
+            if (value >= 9) {
+                return "A";
+            } else if (value >= 8) {
+                return "B+";
+            } else if (value >= 7) {
+                return "B";
+            } else if (value >= 6.5) {
+                return "C+";
+            } else if (value >= 5.5) {
+                return "C";
+            } else if (value >= 5) {
+                return "D+";
+            } else if (value >= 4) {
+                return "D";
+            } else {
+                return "F";
+            }
         }
+        return "";
     }
 
     public static String Date(String value) throws Exception {

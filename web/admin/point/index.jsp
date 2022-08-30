@@ -85,8 +85,6 @@
                                 <tr class="bg-info">
                                     <th>Mã sinh viên</th>
                                     <th>Họ và tên</th>
-                                    <th>Ngày sinh</th>
-                                    <th>Giới tính</th>
                                     <th>Điểm QT</th>
                                     <th>Điểm thi</th>
                                     <th>Điểm TB</th>
@@ -105,7 +103,7 @@
                                 <td><input name="DiemQT" class="form-control form-control-sm text-center" type="text" value="${row.DiemQT}" style="width: 80px;" /></td>
                                 <td><input name="DiemThi" class="form-control form-control-sm text-center" type="text" value="${row.DiemThi}" style="width: 80px;" /></td>
                                 <td><input class="form-control form-control-sm text-center" type="text" value="${(row.DiemQT + row.DiemThi) / 2}" style="width: 80px;" readonly /></td>
-                                <td><input class="form-control form-control-sm text-center" type="text" value="${Helper.Point4((row.DiemQT + row.DiemThi) / 2)}" style="width: 80px;" readonly /></td>
+                                <td><input class="form-control form-control-sm text-center" type="text" value="${Helper.GPA4((row.DiemQT + row.DiemThi) / 2, "text")}" style="width: 80px;" readonly /></td>
                                 <td>
                                     <button name="action" value="save" class="btn btn-sm btn-primary"><i class="fas fa-save"></i> Lưu</button>
                                 </td>
