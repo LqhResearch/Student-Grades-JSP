@@ -85,6 +85,8 @@
                                 <tr class="bg-info">
                                     <th>Mã sinh viên</th>
                                     <th>Họ và tên</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Giới tính</th>
                                     <th>Điểm QT</th>
                                     <th>Điểm thi</th>
                                     <th>Điểm TB</th>

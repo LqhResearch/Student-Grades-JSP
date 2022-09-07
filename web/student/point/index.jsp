@@ -75,11 +75,11 @@
                 <tbody>
                     <tr>
                         <td width="250"><b>- Điểm trung bình tích lũy hệ 4:</b></td>
-                        <td>${gpa4 / stc}</td>
+                        <td><fmt:formatNumber type="number" maxFractionDigits="2" value="${gpa4 / stc}"/></td>
                     </tr>
                     <tr>
                         <td><b>- Điểm trung bình tích lũy hệ 10:</b></td>
-                        <td>${gpa10 / stc}</td>
+                        <td><fmt:formatNumber type="number" maxFractionDigits="2" value="${gpa10 / stc}"/></td>
                     </tr>
                     <tr>
                         <td><b>- Số tín chỉ tích lũy:</b></td>

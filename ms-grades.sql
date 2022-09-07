@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2022 at 03:35 AM
+-- Generation Time: Sep 07, 2022 at 08:56 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -35,6 +35,16 @@ CREATE TABLE `bang_diem` (
   `DiemQT` varchar(5) NOT NULL,
   `DiemThi` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bang_diem`
+--
+
+INSERT INTO `bang_diem` (`MaBD`, `MaLop`, `MaHP`, `MaSV`, `DiemQT`, `DiemThi`) VALUES
+(1, 'DA19TTA', '220060', '110119014', '8.5', '8.5'),
+(2, 'DA19TTA', '220064', '110119014', '8.0', '8.0'),
+(3, 'DA19TTA', '220231', '110119014', '6.4', '6.4'),
+(4, 'DA19TTA', '220067', '110119014', '8.0', '8.0');
 
 -- --------------------------------------------------------
 
@@ -155,7 +165,9 @@ INSERT INTO `giang_vien` (`MaGV`, `HoTen`, `GioiTinh`, `NgaySinh`, `Sdt`, `DiaCh
 ('GV001', 'Nguyễn Bá Nhiệm', 'Nam', '1970-08-11', '0983303609', 'Trà Vinh', 'nhiemnb@tvu.edu.vn', '084123456789', '', 2),
 ('GV002', 'Dương Ngọc Vân Khanh', 'Nam', '1970-08-11', '0123457899', 'Trà Vinh', 'vankhanh@tvu.edu.vn', '087987654321', '', 1),
 ('GV003', 'Khấu Văn Nhựt', 'Nam', '1970-08-11', '0123456789', 'Trà Vinh', 'nhutkhau@tvu.edu.vn', '087987654321', '', 2),
-('GV004', 'Phạm Thị Trúc Mai', 'Nữ', '1970-08-11', '0123456789', 'Trà Vinh', 'pttmai@tvu.edu.vn', '087987654321', '', 1);
+('GV004', 'Phạm Thị Trúc Mai', 'Nữ', '1970-08-11', '0123456789', 'Trà Vinh', 'pttmai@tvu.edu.vn', '087987654321', '', 1),
+('GV005', 'Phan Thị Phương Nam', 'Nữ', '1970-08-11', '0123456789', 'Trà Vinh', 'ptpnam@tvu.edu.vn', '087987654321', '', 1),
+('GV006', 'Ngô Thanh Huy', 'Nam', '1970-08-11', '0123456789', 'Trà Vinh', 'ptpnam@tvu.edu.vn', '087987654321', '', 1);
 
 -- --------------------------------------------------------
 
@@ -260,6 +272,16 @@ CREATE TABLE `phan_cong` (
   `HocKy` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `phan_cong`
+--
+
+INSERT INTO `phan_cong` (`PhanCongID`, `MaLop`, `MaHP`, `MaGV`, `NamHoc`, `HocKy`) VALUES
+(1, 'DA19TTA', '220064', 'GV004', '2020 - 2021', 2),
+(2, 'DA19TTA', '220231', 'GV001', '2021 - 2022', 1),
+(3, 'DA19TTA', '220060', 'GV005', '2020 - 2021', 1),
+(4, 'DA19TTA', '220067', 'GV006', '2021 - 2022', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -311,6 +333,7 @@ CREATE TABLE `tai_khoan` (
 --
 
 INSERT INTO `tai_khoan` (`TenDangNhap`, `MatKhau`, `HoTen`, `MaLoaiTK`) VALUES
+('110119014', '202cb962ac59075b964b07152d234b70', 'Lý Quốc Hưng', 3),
 ('110119080', '202cb962ac59075b964b07152d234b70', 'Lý Kim Lam', 3),
 ('admin', '202cb962ac59075b964b07152d234b70', 'LQH', 1),
 ('GV001', '202cb962ac59075b964b07152d234b70', 'Nguyễn Bá Nhiệm', 2);
@@ -406,7 +429,7 @@ ALTER TABLE `tai_khoan`
 -- AUTO_INCREMENT for table `bang_diem`
 --
 ALTER TABLE `bang_diem`
-  MODIFY `MaBD` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaBD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `bo_mon`
@@ -436,7 +459,7 @@ ALTER TABLE `nganh_dt`
 -- AUTO_INCREMENT for table `phan_cong`
 --
 ALTER TABLE `phan_cong`
-  MODIFY `PhanCongID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PhanCongID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

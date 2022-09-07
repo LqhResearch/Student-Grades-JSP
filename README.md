@@ -8,10 +8,10 @@
 
 ## :framed_picture: Hình ảnh
 - Đăng nhập
-![Đăng nhập](web/assets/img/github/login.png)
+![Đăng nhập](./web/assets/img/github/login.png)
 - Quản trị viên
-![Quản trị viên](web/assets/img/github/admin.png)
+![Quản trị viên](./web/assets/img/github/admin.png)
 - Giảng viên
-![Giảng viên](web/assets/img/github/teacher.png)
+![Giảng viên](./web/assets/img/github/teacher.png)
 - Sinh viên
-![Sinh viên](web/assets/img/github/student.png)
+![Sinh viên](./web/assets/img/github/student.png)
