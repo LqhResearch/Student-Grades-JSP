@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /Student-Grades-JSP/
+
+RewriteRule ^admin/index\.jsp$ /admin/index.jsp [L,R=301]
